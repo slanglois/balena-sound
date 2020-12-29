@@ -64,3 +64,11 @@ services:
     network_mode: host
     volumes:
       - spotifycache:/var/cache/raspotify
+
+  plex:
+    build: ./plugins/plex
+    restart: on-failure
+    network_mode: host
+    privileged: true
+    labels:
+      io.balena.features.dbus: 1
