@@ -25,17 +25,17 @@ services:
     labels:
       io.balena.features.supervisor-api: 1
 
-  multiroom-server:
-    build: ./core/multiroom/server
-    restart: on-failure
-    ports:
-      - 1704:1704
-      - 1705:1705
-      - 1780:1780
-
-  multiroom-client:
-    build: ./core/multiroom/client
-    restart: on-failure
+#  multiroom-server:
+#    build: ./core/multiroom/server
+#    restart: on-failure
+#    ports:
+#      - 1704:1704
+#      - 1705:1705
+#      - 1780:1780
+#
+#  multiroom-client:
+#    build: ./core/multiroom/client
+#    restart: on-failure
 
   # Plugins
   # -- Additional plugins can be added. See https://sound.balenalabs.io/docs/plugins.
