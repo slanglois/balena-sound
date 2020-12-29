@@ -2,4 +2,4 @@ FROM linuxserver/plex
 
 ENV UDEV=on
 
-RUN apt install exfat-fuse
+# RUN apt install exfat-fuse
