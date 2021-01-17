@@ -6,6 +6,6 @@ ENV UDEV=on
 RUN apt --yes update
 RUN apt --yes install exfat-fuse
 
-# mounting external disk using s6
-RUN mkdir -p /var/run/s6/services/mountdisk
-COPY mountdisk.sh /var/run/s6/services/mountdisk/run
+# Tiny hack to mount the disk when the container starts
+# by adding a line just after the shebang, in the entry point /init
+RUN sed -ie '/^#!/a if [[ -b /dev/sda1 ]]; then mount /dev/sda1 /mnt; fi' /init
