@@ -2,6 +2,7 @@ version: '2'
 
 volumes:
   spotifycache:
+  plexconfig:
 
 services:
 
@@ -70,5 +71,7 @@ services:
     restart: on-failure
     network_mode: host
     privileged: true
+    volumes:
+      - plexconfig:/config
     labels:
       io.balena.features.dbus: 1
